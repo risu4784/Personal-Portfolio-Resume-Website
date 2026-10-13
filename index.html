@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name — Portfolio</title>
+<meta name="description" content="Portfolio of Your Name, a designer and developer.">
+<style>
+  :root {
+    --bg: #fbfbf9;
+    --text: #1d1d1b;
+    --muted: #6b6b66;
+    --line: #dcdcd6;
+    --accent: #1f4fd8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16161a;
+      --text: #ececea;
+      --muted: #9a9a94;
+      --line: #2e2e34;
+      --accent: #7aa2ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 18px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+
+  header { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  header strong { font-weight: 600; }
+  nav a { margin-left: 1.25rem; color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+
+  section { padding: 3.5rem 0; border-bottom: 1px solid var(--line); }
+  h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 1rem; }
+  h2 { font-size: 1.25rem; margin: 0 0 1.5rem; }
+  p { margin: 0 0 1rem; max-width: 60ch; }
+  .muted { color: var(--muted); }
+
+  .projects { list-style: none; margin: 0; padding: 0; }
+  .projects li { padding: 1.25rem 0; border-top: 1px solid var(--line); }
+  .projects li:first-child { border-top: 0; padding-top: 0; }
+  .projects h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
+  .projects p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <strong>Your Name</strong>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h1>Hi, I'm Your Name. I make things for the web.</h1>
+      <p class="muted">Write one or two sentences about what you do and who you do it for.</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <ul class="projects">
+        <li>
+          <h3><a href="#">Project one</a></h3>
+          <p>One line on what it is and your role. 2025.</p>
+        </li>
+        <li>
+          <h3><a href="#">Project two</a></h3>
+          <p>One line on what it is and your role. 2024.</p>
+        </li>
+        <li>
+          <h3><a href="#">Project three</a></h3>
+          <p>One line on what it is and your role. 2023.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>A short paragraph about your background, what you care about, and what you're working on now.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Email me at <a href="mailto:you@example.com">you@example.com</a>.</p>
+      <p><a href="#">GitHub</a> · <a href="#">LinkedIn</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Your Name</div>
+</footer>
+
+</body>
+</html>
