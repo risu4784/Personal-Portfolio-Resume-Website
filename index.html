@@ -1,120 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Name — Portfolio</title>
-<meta name="description" content="Portfolio of Your Name, a designer and developer.">
-<style>
-  :root {
-    --bg: #fbfbf9;
-    --text: #1d1d1b;
-    --muted: #6b6b66;
-    --line: #dcdcd6;
-    --accent: #1f4fd8;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #16161a;
-      --text: #ececea;
-      --muted: #9a9a94;
-      --line: #2e2e34;
-      --accent: #7aa2ff;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 18px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  }
-  a { color: var(--accent); }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <meta name="description" content="Personal portfolio of Harith Iskandar bin Kushairi, showcasing skills, experience and projects.">
+        <meta name="author" content="Harith Iskandar bin Kushairi">
+        <link rel="icon" href="images/favicon.png">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <!-- Accessibility: lets keyboard users skip the navigation -->
+        <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  header { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
-  header .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-  header strong { font-weight: 600; }
-  nav a { margin-left: 1.25rem; color: var(--muted); text-decoration: none; }
-  nav a:hover { color: var(--text); }
+        <header>
+            <nav aria-label="Main navigation">
+                <a href="#home" class="logo">[Your Name]</a>
 
-  section { padding: 3.5rem 0; border-bottom: 1px solid var(--line); }
-  h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 1rem; }
-  h2 { font-size: 1.25rem; margin: 0 0 1.5rem; }
-  p { margin: 0 0 1rem; max-width: 60ch; }
-  .muted { color: var(--muted); }
+                <ul id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
 
-  .projects { list-style: none; margin: 0; padding: 0; }
-  .projects li { padding: 1.25rem 0; border-top: 1px solid var(--line); }
-  .projects li:first-child { border-top: 0; padding-top: 0; }
-  .projects h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
-  .projects p { margin: 0; color: var(--muted); font-size: .95rem; }
+                <!-- JS feature: dark / light mode toggle -->
+                <button id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+            </nav>
+        </header>
 
-  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
-</style>
-</head>
-<body>
+        <main id="main-content">
 
-<header>
-  <div class="wrap">
-    <strong>Your Name</strong>
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+            <!-- ===== HOME ===== -->
+            <section id="home" aria-labelledby="home-heading">
+                <h1 id="home-heading">Hi, I'm Harith Iskandar bin Kushairi</h1>
+                <p class="role">3rd Year Network Computing Student</p>
+                <p>[Short description here adidn].</p>
+                <p>
+                    <a href="#projects" class="button">View My Projects</a>
+                    <a href="#contact" class="button button-outline">Contact Me</a>
+                </p>
+            </section>
 
-<main>
-  <section>
-    <div class="wrap">
-      <h1>Hi, I'm Your Name. I make things for the web.</h1>
-      <p class="muted">Write one or two sentences about what you do and who you do it for.</p>
-    </div>
-  </section>
+            <!-- ===== ABOUT ME ===== -->
+            <section id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading">About Me</h2>
 
-  <section id="work">
-    <div class="wrap">
-      <h2>Selected work</h2>
-      <ul class="projects">
-        <li>
-          <h3><a href="#">Project one</a></h3>
-          <p>One line on what it is and your role. 2025.</p>
-        </li>
-        <li>
-          <h3><a href="#">Project two</a></h3>
-          <p>One line on what it is and your role. 2024.</p>
-        </li>
-        <li>
-          <h3><a href="#">Project three</a></h3>
-          <p>One line on what it is and your role. 2023.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
+                <div class="about-layout">
+                    <figure>
+                        <img src="images/profile.jpg" alt="Your fce" width="300" height="300" loading="lazy">
+                    </figure>
 
-  <section id="about">
-    <div class="wrap">
-      <h2>About</h2>
-      <p>A short paragraph about your background, what you care about, and what you're working on now.</p>
-    </div>
-  </section>
+                    <div>
+                        <p>A short paragraph about who you are, your background and your interests.</p>
 
-  <section id="contact">
-    <div class="wrap">
-      <h2>Contact</h2>
-      <p>Email me at <a href="mailto:you@example.com">you@example.com</a>.</p>
-      <p><a href="#">GitHub</a> · <a href="#">LinkedIn</a></p>
-    </div>
-  </section>
-</main>
+                        <h3>Skills</h3>
+                        <ul id="skills-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
 
-<footer>
-  <div class="wrap">&copy; 2026 Your Name</div>
-</footer>
+                        <h3>Education</h3>
+                        <dl>
+                            <dt>Foundation in Physical Science, UNIMAS</dt>
+                            <dd><time datetime="2022">2022</time> – <time datetime="2023">2023</time></dd>
 
-</body>
+                            <dt>Degree in Network Computing, UNIMAS</dt>
+                            <dd><time datetime="2023">2023</time> – <time datetime="2026">2026</time></dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== PROJECTS ===== -->
+            <section id="projects" aria-labelledby="projects-heading">
+                <h2 id="projects-heading">Projects</h2>
+                <p>Select any screenshot to view it larger.</p>
+
+                <article id="project-1">
+                    <h3>Project 1 Title</h3>
+                    <p>Short description of project 1.</p>
+                    <ul aria-label="Technologies used in project 1">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="screenshots">
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 1 screenshot 1">
+                                <img src="images/project1-screenshot1.png" alt="Project 1 screenshot 1" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 1</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 1 screenshot 2">
+                                <img src="images/project1-screenshot2.png" alt="Project 1 screenshot 2" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 2</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 1 screenshot 3">
+                                <img src="images/project1-screenshot3.png" alt="Project 1 screenshot 3" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 3</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <article id="project-2">
+                    <h3>Project 2 Title</h3>
+                    <p>Short description of project 2.</p>
+                    <ul aria-label="Technologies used in project 2">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="screenshots">
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 2 screenshot 1">
+                                <img src="images/project2-screenshot1.png" alt="Project 2 screenshot 1" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 1</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 2 screenshot 2">
+                                <img src="images/project2-screenshot2.png" alt="Project 2 screenshot 2" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 2</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 2 screenshot 3">
+                                <img src="images/project2-screenshot3.png" alt="Project 2 screenshot 3" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 3</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <article id="project-3">
+                    <h3>Project 3 Title</h3>
+                    <p>Short description of project 3.</p>
+                    <ul aria-label="Technologies used in project 3">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="screenshots">
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 3 screenshot 1">
+                                <img src="images/project3-screenshot1.png" alt="Project 3 screenshot 1" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 1</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 3 screenshot 2">
+                                <img src="images/project3-screenshot2.png" alt="Project 3 screenshot 2" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 2</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 3 screenshot 3">
+                                <img src="images/project3-screenshot3.png" alt="Project 3 screenshot 3" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 3</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <article id="project-4">
+                    <h3>Project 4 Title</h3>
+                    <p>Short description of project 4.</p>
+                    <ul aria-label="Technologies used in project 4">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="screenshots">
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 4 screenshot 1">
+                                <img src="images/project4-screenshot1.png" alt="Project 4 screenshot 1" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 1</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 4 screenshot 2">
+                                <img src="images/project4-screenshot2.png" alt="Project 4 screenshot 2" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 2</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 4 screenshot 3">
+                                <img src="images/project4-screenshot3.png" alt="Project 4 screenshot 3" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 3</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <article id="project-5">
+                    <h3>Project 5 Title</h3>
+                    <p>Short description of project 5.</p>
+                    <ul aria-label="Technologies used in project 5">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="screenshots">
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 5 screenshot 1">
+                                <img src="images/project5-screenshot1.png" alt="Project 5 screenshot 1" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 1</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 5 screenshot 2">
+                                <img src="images/project5-screenshot2.png" alt="Project 5 screenshot 2" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 2</figcaption>
+                        </figure>
+                        <figure>
+                            <button type="button" class="screenshot-button" aria-label="Enlarge project 5 screenshot 3">
+                                <img src="images/project5-screenshot3.png" alt="Project 5 screenshot 3" width="800" height="500" loading="lazy">
+                            </button>
+                            <figcaption>Caption for screenshot 3</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <!-- JS feature: screenshot lightbox (native dialog element) -->
+                <dialog id="lightbox" aria-label="Screenshot viewer">
+                    <div class="lightbox-content">
+                        <button type="button" id="lightbox-close" class="lightbox-close">Close</button>
+                        <figure>
+                            <img id="lightbox-img" src="" alt="">
+                            <figcaption id="lightbox-caption"></figcaption>
+                        </figure>
+                        <div class="lightbox-controls">
+                            <button type="button" id="lightbox-prev">Previous</button>
+                            <span id="lightbox-counter" aria-live="polite"></span>
+                            <button type="button" id="lightbox-next">Next</button>
+                        </div>
+                    </div>
+                </dialog>
+            </section>
+
+            <!-- ===== CONTACT ===== -->
+            <section id="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Contact</h2>
+                <p>
+                    Want to work together or just say hello? Email me at
+                    <a href="mailto:102590@siswa.unimas.my?subject=Portfolio%20enquiry">102590@siswa.unimas.my</a>.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Harith Iskandar bin Kushairi. All rights reserved.</p>
+            <p><a href="#home">Back to top</a></p>
+        </footer>
+    </body>
 </html>
