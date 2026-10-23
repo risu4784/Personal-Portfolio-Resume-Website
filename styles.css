@@ -1,24 +1,13 @@
-/* ==========================================================
-   Portfolio stylesheet – pastel green (light) + dark green (dark)
-   Sections: 1 Tokens · 2 Base · 3 Accessibility · 4 Header/Nav
-             5 Buttons · 6 Sections · 7 About · 8 Projects
-             9 Lightbox · 10 Footer · 11 Responsive
-   ========================================================== */
-
-/* ---------- 1. Design tokens ----------
-   Light theme is the default. The dark theme is a separately
-   designed palette (deep green surfaces, light mint accents),
-   not an inversion of the light one.                         */
 :root {
     color-scheme: light;
 
-    --bg:            #f0f8f1;   /* pale pastel mint page background */
-    --surface:       #dcefe0;   /* pastel green: header, cards */
+    --bg:            #f0f8f1;   /* page background */
+    --surface:       #dcefe0;   /* header, cards */
     --surface-high:  #c9e5d0;   /* hover / raised */
     --border:        #a9cfb3;
-    --text:          #14301f;   /* contrast ~13:1 on --bg */
-    --text-muted:    #3f5d49;   /* contrast ~6:1 on --surface */
-    --accent:        #1a6b3a;   /* links, buttons (contrast ~5.8:1 on --bg) */
+    --text:          #14301f;   /* contrast onbg */
+    --text-muted:    #3f5d49;   /* contrast surface */
+    --accent:        #1a6b3a;   /* links, buttons (contrast on bg) */
     --accent-strong: #0f4f29;   /* hover */
     --on-accent:     #ffffff;   /* text placed on accent colour */
     --focus:         #0b5cad;   /* focus ring */
@@ -30,10 +19,10 @@
 
     --radius:        10px;
     --max-width:     1100px;
-    --scroll-offset: 5rem;      /* space kept clear for the sticky header */
+    --scroll-offset: 5rem;
 }
 
-/* Dark theme – chosen by the toggle button (JS sets data-theme) */
+/* Dark Theme (JS sets data-theme) */
 :root[data-theme="dark"] {
     color-scheme: dark;
 
@@ -41,8 +30,8 @@
     --surface:       #163428;
     --surface-high:  #1f4636;
     --border:        #2f5d49;
-    --text:          #e8f1ea;   /* contrast ~14:1 on --bg */
-    --text-muted:    #a9c4b2;   /* contrast ~8:1 on --bg */
+    --text:          #e8f1ea;   /* contrast on bg */
+    --text-muted:    #a9c4b2;   /* contrast on bg */
     --accent:        #7fd99a;
     --accent-strong: #a8efbd;
     --on-accent:     #0a1a11;
@@ -51,8 +40,7 @@
     --backdrop:      rgba(0, 0, 0, 0.8);
 }
 
-/* Same dark palette, used automatically when the visitor's device
-   prefers dark mode and they have not chosen a theme themselves. */
+/* Same dark mode but based on user display preferences and they have not chosen a theme themselves. */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         color-scheme: dark;
@@ -72,7 +60,7 @@
     }
 }
 
-/* ---------- 2. Base ---------- */
+/* Base */
 *,
 *::before,
 *::after {
@@ -140,9 +128,9 @@ ul {
     padding-left: 1.2rem;
 }
 
-/* ---------- 3. Accessibility ---------- */
+/* Accessibility  */
 
-/* Clear focus state for every interactive element */
+/* clear focus after interaction */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid var(--focus);
@@ -173,7 +161,7 @@ button:focus-visible {
     * { transition: none !important; animation: none !important; }
 }
 
-/* ---------- 4. Header & navigation ---------- */
+/* header & navigation  */
 header {
     position: sticky;
     top: 0;
@@ -227,7 +215,7 @@ nav {
     border-bottom-color: var(--accent);
 }
 
-/* Theme toggle button */
+/* theme toggle button */
 #theme-toggle {
     padding: 0.4rem 1rem;
     color: var(--text);
@@ -247,7 +235,7 @@ nav {
     border-color: var(--accent);
 }
 
-/* ---------- 5. Buttons ---------- */
+/* buttons  */
 .button,
 button {
     font: inherit;
@@ -283,7 +271,7 @@ button {
     color: var(--on-accent);
 }
 
-/* ---------- 6. Sections ---------- */
+/* sections  */
 main > section {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -307,7 +295,7 @@ main > section + section {
     font-weight: 600;
 }
 
-/* ---------- 7. About ---------- */
+/* about  */
 .about-layout {
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -324,7 +312,7 @@ main > section + section {
     background-color: var(--surface);
 }
 
-/* Skills shown as pills */
+/* skills shown as pills */
 #skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -341,7 +329,7 @@ main > section + section {
     font-size: 0.95rem;
 }
 
-/* Experience & education */
+/* experience & education */
 dl {
     margin: 0;
 }
@@ -357,7 +345,7 @@ dd {
     color: var(--text-muted);
 }
 
-/* ---------- 8. Projects ---------- */
+/* projects  */
 article {
     margin-top: 2.5rem;
     padding: 1.75rem;
@@ -371,7 +359,7 @@ article h3 {
     margin-top: 0;
 }
 
-/* Technology tags */
+/* technology tags */
 article > ul {
     display: flex;
     flex-wrap: wrap;
@@ -389,7 +377,7 @@ article > ul li {
     border-radius: 999px;
 }
 
-/* Screenshot grid */
+/* screenshot grid */
 .screenshots {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -421,7 +409,7 @@ article > ul li {
     transition: border-color 0.2s;
 }
 
-/* ---------- 9. Lightbox ---------- */
+/* lightbox  */
 #lightbox {
     width: min(92vw, 900px);
     max-height: 92vh;
@@ -480,7 +468,7 @@ article > ul li {
     color: var(--accent);
 }
 
-/* ---------- 10. Footer ---------- */
+/* footer */
 footer {
     padding: 2rem 1.25rem;
     text-align: center;
@@ -495,9 +483,9 @@ footer p {
     margin-bottom: 0.4rem;
 }
 
-/* ---------- 11. Responsive ---------- */
+/* responsive  */
 
-/* Tablet */
+/* tablet */
 @media (max-width: 900px) {
     .about-layout {
         grid-template-columns: 200px 1fr;
@@ -505,7 +493,7 @@ footer p {
     }
 }
 
-/* Mobile */
+/* mobile */
 @media (max-width: 640px) {
     :root {
         --scroll-offset: 8rem;
@@ -515,7 +503,9 @@ footer p {
         font-size: 1rem;
     }
 
-    /* Row 1: logo + theme button. Row 2: links */
+    /* Row 1: logo + theme button.
+       Row 2: links */
+       
     #nav-links {
         order: 3;
         width: 100%;
